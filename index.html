@@ -88,6 +88,10 @@
             // Отправка данных в Telegram
             sendToTelegram(message);
         });
+        
+            // Показ уведомления
+            showNotification(`Спасибо за ваше подтверждение!`);
+        });
 
         function sendToTelegram(message) {const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
             const chatId = '1699389283'; // Замените на ваш chat_id
