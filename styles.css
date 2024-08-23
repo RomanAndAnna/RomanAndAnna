@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Miami Nueva';
-    src: url('https://github.com/NRomanO19/NRomanO19.github.io/blob/6473ff91c8f9bb6f1128e789005012ce6e26706f/Miama%20Nueva.ttf') format('truetype');
+    src: url('https://disk.yandex.ru/d/Ips8WEdSoPJDRg') format('truetype'); /* Замените на прямую ссылку на ваш шрифт */
     font-weight: 400; /* Укажите нужный вес */
     font-style: normal; /* Укажите стиль */
 }
@@ -88,7 +88,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Плавный переходдля кнопки */
+    transition: back
+    ground-color 0.3s ease; /* Плавный переход для кнопки */
 }
 
 button:hover {
