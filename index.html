@@ -26,6 +26,13 @@
             display: block;
             opacity: 1;
         }
+
+        /* Стили для карты */
+        .map-container {
+            margin-top: 20px;
+            height: 400px; /* Высота карты */
+            width: 100%; /* Ширина карты */
+        }
     </style>
 </head>
 <body>
@@ -39,6 +46,18 @@
             <p>Дата: 28 сентября 2024 года</p>
             <p>Время: 17:00</p>
             <p>Место: г.Чайковский, Приморский бульвар 34/1, 2 этаж</p>
+            
+            <!-- Интеграция карты с координатами -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=56.777035,54.138363&zoom=14" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </section>
 
         <section class="details">
