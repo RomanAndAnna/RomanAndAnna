@@ -29,7 +29,7 @@
         <section class="rsvp">
             <h3>Подтверждение участия</h3>
             <form id="rsvp-form">
-                <label for="name">Ваше ФИО:</label>
+                <label for="name">Ваше имя:</label>
                 <input type="text" id="name" name="name" required>
                 
                 <label for="attendance">Вы будете присутствовать?</label>
@@ -38,15 +38,6 @@
                     <option value="yes">Да</option>
                     <option value="no">Нет</option>
                 </select>
-
-                <label for="companions">Количество сопровождающих:</label>
-                <input type="number" id="companions" name="companions" min="0" value="">
-
-                <label for="children">Количество детей:</label>
-                <input type="number" id="children" name="children" min="0" value="">
-
-                <label for="preferences">Пищевые предпочтения:</label>
-                <textarea id="preferences" name="preferences" placeholder="Укажите ваши предпочтения или аллергии"></textarea>
 
                 <button type="submit">Отправить</button>
             </form>
@@ -62,14 +53,12 @@
 
             const name = document.getElementById('name').value;
             const attendance = document.getElementById('attendance').value;
-            const companions = document.getElementById('companions').value;
-            const children = document.getElementById('children').value;
-      
+
             let message;
             if (attendance === 'yes') {
-                message = `${name}, будем рады видеть вас на нашем торжестве! Количество сопровождающих: ${companions}, количество детей: ${children}.`;
-            } else {
-                message = `${name}, сожалеем, что не сможете разделить торжество с нами.`;
+                message = ${name}, будем рады видеть вас на нашем торжестве!;
+} else {
+                message = ${name}, сожалеем, что не сможете разделить торжество с нами.;
             }
 
             alert(message);
