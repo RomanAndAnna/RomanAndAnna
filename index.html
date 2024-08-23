@@ -6,6 +6,27 @@
     <title>Приглашение на свадьбу</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* Добавление стилей для анимации */
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,7 +50,7 @@
         <section class="rsvp">
             <h3>Подтверждение участия</h3>
             <form id="rsvp-form">
-                <label for="name">Ваше имя:</label>
+                <label for="name">Ваше ФИО:</label>
                 <input type="text" id="name" name="name" required>
                 
                 <label for="attendance">Вы будете присутствовать?</label>
@@ -38,14 +59,15 @@
                     <option value="yes">Да</option>
                     <option value="no">Нет</option>
                 </select>
-
-                <button type="submit">Отправить</button>
+            <button type="submit">Отправить</button>
             </form>
+            <div id="notification" class="notification"></div>
         </section>
     </main>
     <footer>
         <p id="download-link" style="cursor: pointer;">&copy; 2024 Роман и Анна</p>
     </footer>
+
 
     <script>
         document.getElementById('rsvp-form').addEventListener('submit', function(event) {
@@ -90,6 +112,15 @@
             .catch((error) => {
                 console.error('Error:', error);
             });
+        }
+  function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000); // Скрыть уведомление через 3 секунды
         }
     </script>
 </body>
