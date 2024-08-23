@@ -6,6 +6,99 @@
     <title>Приглашение на свадьбу</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Miami Nueva';
+            src: url('https://github.com/NRomanO19/NRomanO19.github.io/blob/6473ff91c8f9bb6f1128e789005012ce6e26706f/Miama%20Nueva.ttf') format('truetype');
+            font-weight: 400; 
+            font-style: normal; 
+        }
+
+        body {
+            font-family: 'Miami Nueva', serif; 
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/404/826/original/invitation-card-with-a-light-blue-theme-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header {
+            margin: 20px 0;
+        }
+
+        h1, h2, h3 {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Добавлено для промежутков между элементами формы */
+        }
+
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px; /* Уменьшение шрифта на мобильных устройствах */
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            input, select, button {
+                font-size: 14px; /* Уменьшение размера шрифта в формах */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -57,7 +150,7 @@
             let message;
             if (attendance === 'yes') {
                 message = `${name}, будем рады видеть вас на нашем торжестве!`;
-} else {
+            } else {
                 message = `${name}, сожалеем, что не сможете разделить торжество с нами.`;
             }
 
@@ -67,8 +160,7 @@
             sendToTelegram(message);
         });
 
-        function sendToTelegram(message) {
-            const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
+        function sendToTelegram(message) {const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
             const chatId = '1699389283'; // Замените на ваш chat_id
             const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
