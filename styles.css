@@ -1,12 +1,9 @@
 @font-face {
-    font-family: 'Miami Nueva';
-    src: url('https://disk.yandex.ru/d/Ips8WEdSoPJDRg') format('truetype'); /* Замените на прямую ссылку на ваш шрифт */
-    font-weight: 400; /* Укажите нужный вес */
-    font-style: normal; /* Укажите стиль */
+    font-family: 'Great Vibes', cursive; /* Замените на новый шрифт */
 }
 
 body {
-    font-family: 'Miami Nueva', serif; /* Установите шрифт */
+    font-family: 'Great Vibes', cursive; /* Установите новый шрифт */
     background-image: url('https://static.vecteezy.com/system/resources/previews/000/404/826/original/invitation-card-with-a-light-blue-theme-vector.jpg');
     background-size: cover;
     background-position: center;
@@ -19,7 +16,7 @@ body {
 header {
     background-color: rgba(62, 180, 137, 0.7);
     padding: 20px;
-    animation: slideDown 0.5s ease forwards; /* Анимация для заголовка */
+    animation: slideDown 0.5s ease forwards;
 }
 
 @keyframes slideDown {
@@ -43,15 +40,15 @@ main {
 }
 
 .invitation, .details, .rsvp {
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
-    opacity: 0; /* Начальная прозрачность для анимации */
-    animation: fadeIn 0.5s ease forwards; /* Анимация появления секций */
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -64,7 +61,7 @@ main {
 }
 
 h2, h3 {
-    color: #e74c3c; /* Романтический красный цвет */
+    color: #e74c3c;
 }
 
 label {
@@ -83,32 +80,33 @@ input, select {
 button {
     margin-top: 10px;
     padding: 10px;
-    background-color: #e74c3c; /* Красный цвет */
+    background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: back
-    ground-color 0.3s ease; /* Плавный переход для кнопки */
+    transition: background-color 0.3s ease; /* Исправлено: убрана опечатка */
 }
 
 button:hover {
-    background-color: #c0392b; /* Темнее при наведении */
+    background-color: #c0392b;
 }
 
 footer {
     text-align: center;
     padding: 10px;
     background-color: rgba(62, 180, 137, 0.7);
+    position: relative; /* Позволяет адаптировать нижний колонтитул */
+    width: 100%; /* Занимает полную ширину */
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2em; /* Уменьшение размера заголовка на мобильных устройствах */
+        font-size: 2em;
     }
     
     .invitation, .details, .rsvp {
-        width: 90%; /* Увеличение ширины секций на мобильных устройствах */
+        width: 90%;
     }
 }
