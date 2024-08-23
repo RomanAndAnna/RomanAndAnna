@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Приглашение на свадьбу</h1>
+    </header>
+    <main>
+        <section class="invitation">
+            <h2>Роман & Анна</h2>
+            <p>С радостью приглашаем вас на нашу свадьбу!</p>
+            <p>Дата: 24 сентября 2024 года</p>
+            <p>Время: 12:00</p>
+            <p>Место: ЗАГС по адресу Пермский край, г. Чайковский, Вокзальная, 41</p>
+        </section>
+
+        <section class="details">
+            <h3>Подробности</h3>
+            <p>После церемонии будет банкет и веселье до позднего вечера!</p>
+            <p>Пожалуйста, подтвердите свое присутствие до 1 сентября 2024 года.</p>
+        </section>
+
+        <section class="rsvp">
+            <h3>Подтверждение участия</h3>
+            <form id="rsvp-form">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="attendance">Вы будете присутствовать?</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="">Выберите</option>
+                    <option value="yes">Да</option>
+                    <option value="no">Нет</option>
+                </select>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p id="download-link" style="cursor: pointer;">&copy; 2024 Роман и Анна</p>
+    </footer>
+
+    <script>
+        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const attendance = document.getElementById('attendance').value;
+
+            let message;
+            if (attendance === 'yes') {
+                message = `${name}, будем рады видеть вас на нашем торжестве!`;
+} else {
+                message = `${name}, сожалеем, что не сможете разделить торжество с нами.`;
+            }
+
+            alert(message);
+
+            // Отправка данных в Telegram
+            sendToTelegram(message);
+        });
+
+        function sendToTelegram(message) {
+            const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
+            const chatId = '1699389283'; // Замените на ваш chat_id
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            const data = {
+                chat_id: chatId,
+                text: message
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
