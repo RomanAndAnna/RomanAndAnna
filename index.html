@@ -64,11 +64,10 @@
             const attendance = document.getElementById('attendance').value;
             const companions = document.getElementById('companions').value;
             const children = document.getElementById('children').value;
-            const preferences = document.getElementById('preferences').value;
-
+      
             let message;
             if (attendance === 'yes') {
-                message = `${name}, будем рады видеть вас на нашем торжестве! Количество сопровождающих: ${companions}, количество детей: ${children}. Пищевые предпочтения: ${preferences}`;
+                message = `${name}, будем рады видеть вас на нашем торжестве! Количество сопровождающих: ${companions}, количество детей: ${children}.`;
             } else {
                 message = `${name}, сожалеем, что не сможете разделить торжество с нами.`;
             }
