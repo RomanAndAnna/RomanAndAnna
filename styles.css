@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Miami Nueva';
+    src: url('https://github.com/NRomanO19/NRomanO19.github.io/blob/6473ff91c8f9bb6f1128e789005012ce6e26706f/Miama%20Nueva.ttf') format('truetype');
+    font-weight: 400; /* Укажите нужный вес */
+    font-style: normal; /* Укажите стиль */
+}
+
+body {
+    font-family: 'Miami Nueva', serif; /* Установите шрифт */
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/404/826/original/invitation-card-with-a-light-blue-theme-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: rgba(62, 180, 137, 0.7);
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+.invitation, .details, .rsvp {
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    border-radius: 10px;
+padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+h2, h3 {
+    color: #e74c3c; /* Романтический красный цвет */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e74c3c; /* Красный цвет */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c0392b; /* Темнее при наведении */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(62, 180, 137, 0.7);
+}
