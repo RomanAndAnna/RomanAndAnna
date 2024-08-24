@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Great Vibes', cursive; /* Установите новый шрифт */
+    font-size: 30px;
     background-image: url('https://i.pinimg.com/736x/08/4e/49/084e494824676a85574e9a83f60288dd.jpg');
     background-size: contain;
     background-position: center;
