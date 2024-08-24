@@ -64,6 +64,7 @@ main {
 h2, h3 {
     color: #e74c3c;
     font-family: "Lobster", sans-serif;
+    margin-top: -5px; /* Добавить отступ сверху */
 }
 
 label {
