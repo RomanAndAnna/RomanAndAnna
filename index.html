@@ -6,22 +6,7 @@
     <title>Приглашение на свадьбу</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=703f170d-60c0-4000-a1bd-875e9d1481d3" type="text/javascript"></script>
-    <script>
-        function init() {
-            var myMap = new ymaps.Map("map", {
-                center: [56.777035, 54.138363], // Координаты центра карты
-                zoom: 20 // Уровень масштабирования
-            });
-
-            var myPlacemark = new ymaps.Placemark([56.777035, 54.138363], {
-                balloonContent: 'Место вашей свадьбы' // Текст в баллоне
-            });
-
-            myMap.geoObjects.add(myPlacemark);
-        }
-    </script>
-</head>
+    </head>
 <body onload="init()">
     <header>
         <h1>Приглашение на свадьбу</h1>
