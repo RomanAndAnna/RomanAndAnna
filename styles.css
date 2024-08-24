@@ -62,6 +62,7 @@ main {
 
 h2, h3 {
     color: #e74c3c;
+    font-family: "Roboto", sans-serif;
 }
 
 label {
