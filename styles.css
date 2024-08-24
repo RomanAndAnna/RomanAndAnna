@@ -61,11 +61,24 @@ main {
     }
 }
 
-h2, h3 {
+h2 {
     color: #e74c3c;
     font-family: "Lobster", sans-serif;
     margin-top: -5px; /* Добавить отступ сверху */
     margin-bottom: -5px
+}
+
+h3 {
+    color: #e74c3c;
+    font-family: "Lobster", sans-serif;
+    margin-top: -5px; /* Добавить отступ сверху */
+    margin-bottom: -5px
+}
+
+h4 {
+    color: #e74c3c;
+    font-family: "Lobster", sans-serif;
+    margin-top: -5px; /* Добавить отступ сверху */
 }
 
 label {
