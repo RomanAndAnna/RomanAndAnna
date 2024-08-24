@@ -7,6 +7,7 @@ body {
     background-image: url('https://static.vecteezy.com/system/resources/previews/000/404/826/original/invitation-card-with-a-light-blue-theme-vector.jpg');
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     margin: 0;
     padding: 0;
