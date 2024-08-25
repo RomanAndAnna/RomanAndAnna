@@ -112,6 +112,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 10px;
+    font-family: "Lobster", sans-serif;
     background-color: rgba(62, 180, 137, 0.7);
     position: relative; /* Позволяет адаптировать нижний колонтитул */
     width: 100%; /* Занимает полную ширину */
