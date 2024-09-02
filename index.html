@@ -30,77 +30,80 @@
             <p>Пожалуйста, подтвердите свое присутствие до 10 сентября 2024 года.</p>
         </section>
 
-        <section class="rsvp">
-            <h4>Подтверждение участия</h4>
-            <form id="rsvp-form">
-                <p>Просим заполнить форму ниже, даже если Вы не сможете присутствовать</p>
-                <label for="name">Ваше ФИО:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="attendance">Вы будете присутствовать?</label>
-                <select id="attendance" name="attendance" required>
-                    <option value="">Выберите</option>
-                    <option value="yes">Да</option>
-                    <option value="no">Нет</option>
-                </select>
-            <button type="submit">Отправить</button>
-            </form>
-            <div id="notification" class="notification"></div>
-        </section>
-                <section class="details2">
-            <p>Если Вы задумались над подарком, то мы считаем, что финансы очень интересный подарок, так как нам предстоят крупные покупки.</p>
-            <p>Если Вы так не считаете, то обсудите, пожалуйста, с нами.</p>
-        </section>
-    </main>
-    <footer>
-        <p id="download-link" style="cursor: pointer;">&copy; 2024 Роман и Анна</p>
-    </footer>
+<section class="rsvp"> 
+    <h4>Подтверждение участия</h4> 
+    <form id="rsvp-form"> 
+        <p>Просим заполнить форму ниже, даже если Вы не сможете присутствовать</p> 
+        <label for="name">Ваше ФИО:</label> 
+        <input type="text" id="name" name="name" required> 
+         
+        <label for="attendance">Вы будете присутствовать?</label> 
+        <select id="attendance" name="attendance" required> 
+            <option value="">Выберите</option> 
+            <option value="yes">Да</option> 
+            <option value="no">Нет</option> 
+        </select> 
+        <button type="submit">Отправить</button> 
+    </form> 
+    <div id="notification" class="notification"></div> 
+</section> 
+<section class="details2"> 
+    <p>Если Вы задумались над подарком, то мы считаем, что финансы очень интересный подарок, так как нам предстоят крупные покупки.</p> 
+    <p>Если Вы так не считаете, то обсудите, пожалуйста, с нами.</p> 
+</section> 
+</main> 
+<footer> 
+    <p id="download-link" style="cursor: pointer;">&copy; 2024 Роман и Анна</p> 
+</footer> 
 
+<script> 
+    document.getElementById('rsvp-form').addEventListener('submit', function(event) { 
+        event.preventDefault(); 
 
-    <script>
-        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-            event.preventDefault();
+        const name = document.getElementById('name').value; 
+        const attendance = document.getElementById('attendance').value; 
 
-            const name = document.getElementById('name').value;
-            const attendance = document.getElementById('attendance').value;
+        let message; 
+        if (attendance === 'yes') { 
+            message = `${name}, будем рады видеть вас на нашем торжестве!`; 
+        } else { 
+            message = `${name}, сожалеем, что не сможете разделить торжество с нами.`; 
+        } 
 
-            let message;
-            if (attendance === 'yes') {
-                message = `${name}, будем рады видеть вас на нашем торжестве!`;
-            } else {
-                message = `${name}, сожалеем, что не сможете разделить торжество с нами.`;
-            }
+        alert(message); 
 
-            alert(message);
-
-            // Отправка данных в Telegram
-            sendToTelegram(message);
+        // Отправка данных в Telegram 
+        sendToTelegram(message).then(() => {
+            // Очищаем форму после успешной отправки
+            this.reset(); 
         });
-        
-        function sendToTelegram(message) {const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
-            const chatId = '1699389283'; // Замените на ваш chat_id
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    }); 
+     
+    function sendToTelegram(message) {
+        const token = '7167139784:AAGt6xLpO_j0UUfuvpk_XKHjcMspRqDCnqY'; // Замените на ваш токен бота
+const chatId = '1699389283'; // Замените на ваш chat_id 
+        const url = `https://api.telegram.org/bot${token}/sendMessage`; 
 
-            const data = {
-                chat_id: chatId,
-                text: message
-            };
+        const data = { 
+            chat_id: chatId, 
+            text: message 
+        }; 
 
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
-</body>
+        return fetch(url, { 
+            method: 'POST', 
+            headers: { 
+                'Content-Type': 'application/json' 
+            }, 
+            body: JSON.stringify(data) 
+        }) 
+        .then(response => response.json()) 
+        .then(data => { 
+            console.log('Success:', data); 
+        }) 
+        .catch((error) => { 
+            console.error('Error:', error); 
+        }); 
+    } 
+</script> 
+</body> 
 </html>
